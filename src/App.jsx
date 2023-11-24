@@ -7,7 +7,7 @@ import {
   RouterProvider
 } from "react-router-dom";
 import Root from './routes/Root';
-import Home2 from './components/Home2';
+import Home from './components/Home';
 
 // initializing react router
 const router = createBrowserRouter(
@@ -25,7 +25,7 @@ const router = createBrowserRouter(
     </Route>
     <Route
       path="login"
-      element={<Home2 />}
+      element={<Home />}
       // loader={rootLoader}
       // action={rootAction}
       errorElement={<ErrorPage />}
