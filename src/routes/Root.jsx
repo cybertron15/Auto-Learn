@@ -1,14 +1,16 @@
 import React from 'react'
 import Home from '../components/Home'
-import { Outlet } from 'react-router-dom'
+import HomeMenu from '../components/HomeMenu'
 
 function Root() {
   return (
     <>
-    <Home/>
-    <Outlet></Outlet>
+      <div className='h-full grid grid-cols-5 grid-rows-1'>
+        <HomeMenu></HomeMenu>
+        <div className='col-span-4'>
+        </div>
+      </div>
     </>
-    
   )
 }
 
