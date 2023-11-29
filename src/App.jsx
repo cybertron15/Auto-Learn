@@ -7,7 +7,7 @@ import {
   RouterProvider
 } from "react-router-dom";
 import Root from './routes/Root';
-import Home from './components/Home';
+import Home from './Pages/Home';
 
 // initializing react router
 const router = createBrowserRouter(
