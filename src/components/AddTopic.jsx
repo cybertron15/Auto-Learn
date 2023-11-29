@@ -5,7 +5,11 @@ import {
     Button,
     Dialog,
     Flex,
-    Text
+    Text,
+    Heading,
+    Select,
+    TextArea
+
 } from '@radix-ui/themes'
 import * as Separator from '@radix-ui/react-separator';
 
@@ -41,29 +45,37 @@ function AddTopic({ settopics }) {
             <div className='mt-2'>
                 <Dialog.Root >
                     <Dialog.Trigger>
-                        <Button size="2" variant="solid" className='w-full cursor-pointer disabled:bg-lime-200' ref={modalTriggerRef} disabled={search.length === 0 ? true : false}>
+                        <Button size="2" variant="solid" className='w-full disabled:bg-lime-200' style={{ cursor: 'pointer' }} ref={modalTriggerRef} disabled={search.length === 0 ? true : false}>
                             Start Learning
                         </Button>
+
+
                     </Dialog.Trigger>
                     <Dialog.Content style={{ maxWidth: 450 }}>
                         <Flex direction="column" gap="3">
+                            <Heading>{search}</Heading>
                             <label>
                                 <Text as="div" size="2" mb="1" weight="bold">
-                                    Topic
+                                    Details related to the subject
                                 </Text>
-                                <TextField.Input
-                                    defaultValue={search}
-                                    readOnly
-                                />
+                                <TextArea placeholder="e.g: deployment in web devlopment" />
                             </label>
                             <label>
                                 <Text as="div" size="2" mb="1" weight="bold">
-                                   what's your level of expertise in the subject
+                                    what's your level of expertise in the subject
                                 </Text>
-                                <TextField.Input
-                                    // defaultValue="Freja Johnsen"
-                                    // placeholder="Enter your full name"
-                                />
+                                <Select.Root defaultValue="AbsoluteBeginner" >
+                                    <Select.Trigger className="w-full" />
+                                    <Select.Content>
+                                        <Select.Group>
+                                            <Select.Label>Level</Select.Label>
+                                            <Select.Item value="AbsoluteBeginner">Absolute Beginner</Select.Item>
+                                            <Select.Item value="Beginner">Beginner</Select.Item>
+                                            <Select.Item value="Intermidiate">Intermidiate</Select.Item>
+                                            <Select.Item value="Experts">Experts</Select.Item>
+                                        </Select.Group>
+                                    </Select.Content>
+                                </Select.Root>
                             </label>
 
                         </Flex>
