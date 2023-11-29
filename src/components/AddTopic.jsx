@@ -16,11 +16,12 @@ import * as Separator from '@radix-ui/react-separator';
 function AddTopic({ settopics }) {
     const [bulbcolor, setbulbcolor] = useState('grey')
     const [search, setSearch] = useState('')
+    const [level, setlevel] = useState('AbsoluteBeginner')
     const modalTriggerRef = useRef()
 
     const handleSave = () => {
         settopics((prev) => {
-            return [...prev, search]
+            return [...prev, {topic:search,'level':level}]
         })
         setSearch('')
     }
@@ -64,7 +65,7 @@ function AddTopic({ settopics }) {
                                 <Text as="div" size="2" mb="1" weight="bold">
                                     what's your level of expertise in the subject
                                 </Text>
-                                <Select.Root defaultValue="AbsoluteBeginner" >
+                                <Select.Root defaultValue="AbsoluteBeginner" onValueChange={(value)=>{setlevel(value)}}>
                                     <Select.Trigger className="w-full" />
                                     <Select.Content>
                                         <Select.Group>
@@ -72,7 +73,7 @@ function AddTopic({ settopics }) {
                                             <Select.Item value="AbsoluteBeginner">Absolute Beginner</Select.Item>
                                             <Select.Item value="Beginner">Beginner</Select.Item>
                                             <Select.Item value="Intermidiate">Intermidiate</Select.Item>
-                                            <Select.Item value="Experts">Experts</Select.Item>
+                                            <Select.Item value="Expert">Expert</Select.Item>
                                         </Select.Group>
                                     </Select.Content>
                                 </Select.Root>
