@@ -9,8 +9,8 @@ import {
     ScrollArea,
     Card
 } from '@radix-ui/themes'
-import AddTopic from './AddTopic';
-import TopicCard from './TopicCard';
+import AddSubject from './AddSubject';
+import SubjectCard from './SubjectCard';
 
 function HomeMenu() {
     const [topics, settopics] = useState([
@@ -34,25 +34,24 @@ function HomeMenu() {
             topic: 'css',
             level: 'Expert'
         }])
-    console.log(topics);
     return (
         <>
             <div className='sm:col-span-2 lg:col-span-1 border-2 h-ful'>
                 <h1 className='ms-2'></h1>
                 <div className='mb-4 mt-2 ms-2'>
-                    <Heading size="8" color='grass'>Auto Learn</Heading>
+                    <Heading size="8">Auto Learn</Heading>
                 </div>
                 <div className='flex flex-col'>
-                    <AddTopic settopics={settopics}></AddTopic>
+                    <AddSubject settopics={settopics}></AddSubject>
 
                     <div className='mt-2 mx-2'>
-                        <Heading size="6" color='grass'>Your Subjects</Heading>
+                        <Heading size="6">Your Subjects</Heading>
                     </div>
                     <div className='me-0.5'>
 
                         <ScrollArea scrollbars="vertical" type='auto' style={{ height: "500px" }} >
                             {topics && topics.map((topic, index) => {
-                                return <TopicCard topic={topic['topic']} level={topic['level'] } key={index}></TopicCard>
+                                return <SubjectCard topic={topic['topic']} level={topic['level'] } key={index}></SubjectCard>
                             })}
 
                         </ScrollArea>
