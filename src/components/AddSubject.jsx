@@ -13,7 +13,7 @@ import {
 } from '@radix-ui/themes'
 import * as Separator from '@radix-ui/react-separator';
 
-function AddTopic({ settopics }) {
+function AddSubject({ settopics }) {
     const [bulbcolor, setbulbcolor] = useState('grey')
     const [search, setSearch] = useState('')
     const [level, setlevel] = useState('AbsoluteBeginner')
@@ -49,8 +49,6 @@ function AddTopic({ settopics }) {
                         <Button size="2" variant="solid" className='w-full disabled:bg-lime-200' style={{ cursor: 'pointer' }} ref={modalTriggerRef} disabled={search.length === 0 ? true : false}>
                             Start Learning
                         </Button>
-
-
                     </Dialog.Trigger>
                     <Dialog.Content style={{ maxWidth: 450 }}>
                         <Flex direction="column" gap="3">
@@ -94,9 +92,9 @@ function AddTopic({ settopics }) {
                     </Dialog.Content>
                 </Dialog.Root>
             </div>
-            <Separator.Root className="-2 mt-3 bg-slate-300" style={{ height: "1px" }} />
+            <Separator.Root className="-2 my-3 bg-slate-300" style={{ height: "1px" }} />
         </div>
     )
 }
 
-export default AddTopic
+export default AddSubject
