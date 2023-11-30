@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-body,html,#root{
+body,
+html,
+#root {
     height: 100%;
+}
+
+body {
+    background-image: url('/leaves.webp');
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #cbd5e0;
+    /* Change to your desired color */
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #edf2f7;
+    /* Change to your desired color */
+}
+
+/* For Firefox */
+.scrollbar-thumb-gray-400 {
+    scrollbar-color: #cbd5e0 #edf2f7;
+    /* Change to your desired colors */
 }
