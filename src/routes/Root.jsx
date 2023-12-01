@@ -5,7 +5,8 @@ import { Avatar, Heading, Text, Badge, ScrollArea } from '@radix-ui/themes'
 import CustomBadge from '../components/CustomBadge'
 import TopicCard from '../components/TopicCard'
 import * as Separator from '@radix-ui/react-separator';
-
+import DashBoardDropdown from '../components/DashBoardDropdown'
+DashBoardDropdown
 function Root() {
 
 	return (
@@ -14,7 +15,7 @@ function Root() {
 				<HomeMenu></HomeMenu>
 				<div className='col-span-4 h-full flex flex-col'>
 					<div className='basis-1/5'>
-						<div className='grid grid-cols-12 ms-4'>
+						<div className='flex w-full ms-4'>
 							<div className='mt-3'>
 								<Avatar
 									radius="full"
@@ -24,9 +25,12 @@ function Root() {
 									className='hover:ring-2 ring-lime-300 cursor-pointer'
 								/>
 							</div>
-							<div className='col-span-10 ms-8'>
-								<div className='mt-2'>
+							<div className='grow ms-8'>
+								<div className='mt-2 flex justify-between'>
 									<Heading size="8">Welcome Palash Dhavle</Heading>
+									<div className='me-6'>
+										<DashBoardDropdown></DashBoardDropdown>
+									</div>
 								</div>
 								<div className="mt-2">
 									<div className='flex gap-3'>
@@ -49,8 +53,11 @@ function Root() {
 						</div>
 						<div className='mt-2'>
 							<CustomBadge label="Topic Completed" value="50"></CustomBadge>
-							<CustomBadge label="Course Completed" value="55"></CustomBadge>
+							<CustomBadge label="Course Completed" value="555"></CustomBadge>
 						</div>
+					</div>
+					<div className='ms-4 mt-3 me-2'>
+						<Text >Python is a general-purpose, high-level programming language. Its design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects.</Text>
 					</div>
 					<div className='mt-2 ms-4 grid grid-cols-4 gap-4 mb-5 overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100'>
 						<TopicCard topic={'Syntax and Data Types'} desc={'Understanding variables, data types, and basic operations. Conditional statements (if, else) and loops (for, while).'} testTaken={3}></TopicCard>
