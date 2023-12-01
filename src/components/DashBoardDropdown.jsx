@@ -14,6 +14,7 @@ function DashBoardDropdown() {
                 <DropdownMenu.Content style={{ width: "150px" }}>
                     <DropdownMenu.Item shortcut="">Profile</DropdownMenu.Item>
                     <DropdownMenu.Item shortcut="">Analytics</DropdownMenu.Item>
+                    <DropdownMenu.Item shortcut="">Settings</DropdownMenu.Item>
                     <DropdownMenu.Separator />
                     <AlertDialog.Trigger>
                         <DropdownMenu.Item shortcut="" color="red">
@@ -26,8 +27,7 @@ function DashBoardDropdown() {
             <AlertDialog.Content style={{ maxWidth: 450 }}>
                 <AlertDialog.Title>Revoke access</AlertDialog.Title>
                 <AlertDialog.Description size="2">
-                    Are you sure? This application will no longer be accessible and any
-                    existing sessions will be expired.
+                    Are you sure? You want to logout.
                 </AlertDialog.Description>
 
                 <Flex gap="3" mt="4" justify="end">
@@ -38,7 +38,7 @@ function DashBoardDropdown() {
                     </AlertDialog.Cancel>
                     <AlertDialog.Action>
                         <Button variant="solid" color="red">
-                            Revoke access
+                            Logout
                         </Button>
                     </AlertDialog.Action>
                 </Flex>
