@@ -6,9 +6,8 @@ import CustomBadge from '../components/CustomBadge'
 import TopicCard from '../components/TopicCard'
 import * as Separator from '@radix-ui/react-separator';
 import DashBoardDropdown from '../components/DashBoardDropdown'
-DashBoardDropdown
+import DarkModeToggle from '../components/DarkModeToggle'
 function Root() {
-
 	return (
 		<>
 			<div className='h-full grid grid-cols-5 grid-rows-1 '>
@@ -28,7 +27,8 @@ function Root() {
 							<div className='grow ms-8'>
 								<div className='mt-2 flex justify-between'>
 									<Heading size="8">Welcome Palash Dhavle</Heading>
-									<div className='me-6'>
+									<div className='me-6 flex gap-2'>
+										<DarkModeToggle></DarkModeToggle>
 										<DashBoardDropdown></DashBoardDropdown>
 									</div>
 								</div>
