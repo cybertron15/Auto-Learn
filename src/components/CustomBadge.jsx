@@ -1,16 +1,17 @@
 import React from 'react'
-import {Badge} from '@radix-ui/themes'
+import { Badge } from '@radix-ui/themes'
 
-function CustomBadge({label,value}) {
+function CustomBadge({ label, value }) {
   return (
-    <div className='flex'>
-    <div>
-      <Badge color="lime" style={{width:"130px"}}>{label}</Badge>
+    <div className='flex'> 
+      <div>
+        <Badge style={{ width: "130px" }}>{label}</Badge>
+      </div>
+      <div className=''> 
+      {/* //FIXME 3 digit number makes the badge grow */}
+        <Badge >{value}</Badge>
+      </div>
     </div>
-    <div className=''>
-      <Badge color="lime">{value}</Badge>
-    </div>
-  </div>
   )
 }
 
