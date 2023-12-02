@@ -49,7 +49,8 @@ function HomeMenu() {
                     </div>
                     <div className='me-0.5'>
 
-                        <ScrollArea scrollbars="vertical" type='auto' style={{ height: "500px" }} >
+                        <ScrollArea scrollbars="vertical" type='auto' style={{ height: "500px" }} > 
+                        {/* //TODO make this responsive */}
                             {topics && topics.map((topic, index) => {
                                 return <SubjectCard topic={topic['topic']} level={topic['level'] } key={index}></SubjectCard>
                             })}
