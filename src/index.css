@@ -1,6 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Inter Regular'), local('Inter-Regular'),
+         url('/fonts/Inter/static/Inter-Regular.ttf') format('truetype'); /*Update the path to your font file*/
+  }
+
+@font-face {
+    font-family: 'Pacifico';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Pacifico Regular'), local('Pacifico-Regular'),
+         url('/fonts/Pacifico/Pacifico-Regular.ttf') format('truetype'); /* Update the path to your font file */
+  }
+  
 
 body,
 html,
