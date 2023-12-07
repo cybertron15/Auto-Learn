@@ -1,13 +1,7 @@
 import React, { useState } from 'react'
 import {
-    TextField,
     Heading,
-    Button,
-    Dialog,
-    Flex,
-    Text,
     ScrollArea,
-    Card
 } from '@radix-ui/themes'
 import AddSubject from './AddSubject';
 import SubjectCard from './SubjectCard';
