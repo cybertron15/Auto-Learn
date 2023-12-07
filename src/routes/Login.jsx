@@ -19,7 +19,7 @@ function Login() {
             <Button variant="solid" radius='large' className='w-full'>
               Login
             </Button>
-            <Button variant="" radius='large' className='w-full'>
+            <Button variant="outline" radius='large' className='w-full'>
               Signup
             </Button>
           {/* </form> */}
