@@ -12,18 +12,26 @@ function Login() {
       <div className='col-span-2 bg-white rounded-s-XXXL text-center'>
         <h1 className='text-5xl font-inter font-bold mt-36'> Hello Friend! </h1>
         <p className='text-2xl mt-1 text-slate-500'>lets learn new stuff today</p>
-        <div className='flex flex-col mt-12 mx-16 gap-3'>
-          {/* <form action="" method="post"> */}
-          <InputField type={'email'}></InputField>
-          <InputField type={'password'}></InputField>
-            <Button variant="solid" radius='large' className='w-full'>
+        <form action="" method="post">
+          <div className='flex flex-col mt-12 mx-16 gap-3'>
+            <InputField type={'email'} size="3"></InputField>
+            <InputField type={'password'} size="3"></InputField>
+            <Button type='button' size={"3"} variant="solid" radius='large' className='w-full' style={{cursor:"pointer"}}>
               Login
             </Button>
-            <Button variant="outline" radius='large' className='w-full'>
+            <Button type='button' size={"3"} variant="outline" radius='large' className='w-full' style={{cursor:"pointer"}}>
               Signup
             </Button>
-          {/* </form> */}
-        </div>
+            <div className="flex gap-2">
+              <Button type='button' size={"3"} variant="outline" radius='large' className='flex-grow' style={{cursor:"pointer"}}>
+                Signup using <Mail color='red'/>
+              </Button>
+              <Button type='button' size={"3"} variant="outline" radius='large' className='flex-grow' style={{cursor:"pointer"}}>
+                Signup using <Github/>
+              </Button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   )
