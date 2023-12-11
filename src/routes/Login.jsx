@@ -1,5 +1,5 @@
-import { TextField, Button,IconButton } from '@radix-ui/themes'
-import { Eye, EyeOff } from 'lucide-react'
+import { TextField, Button, IconButton } from '@radix-ui/themes'
+import { Github, Mail } from 'lucide-react'
 import React, { useState } from 'react'
 import InputField from '../components/InputField'
 InputField
