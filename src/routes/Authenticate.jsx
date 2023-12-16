@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import InputField from '../components/InputField'
 import InfoBox from '../components/InfoBox'
 
-function Login() {
+function Authenticate() {
 	let info = {
 		"tailored content": {
 			desc: "Content generated based on your needs and you expertise level",
@@ -115,4 +115,4 @@ function Login() {
 	)
 }
 
-export default Login
+export default Authenticate
