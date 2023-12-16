@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { forwardRef, useState } from 'react'
 import { Eye, EyeOff } from 'lucide-react'
 import { TextField, IconButton } from '@radix-ui/themes'
-function InputField({ type,size,placeholder }) {
+
+const InputField = forwardRef(({type,size,placeholder, ...props},ref)=>
+ {
     const [showpass, setshowpass] = useState(false)
     const [value, setvalue] = useState("")
     const handlePassToggle = (event) => {
@@ -13,7 +15,7 @@ function InputField({ type,size,placeholder }) {
     return (
         type === 'password' ?
             <TextField.Root>
-                <TextField.Input type={showpass ? 'text' : 'password'} radius='large' size={size?size:""} placeholder={placeholder} value={value} onChange={handleOnChange} minLength={8} required/>
+                <TextField.Input ref={ref} {...props} type={showpass ? 'text' : 'password'} radius='large' size={size?size:""} placeholder={placeholder} value={value} onChange={handleOnChange} minLength={8} required/>
                 <TextField.Slot >
                 <IconButton type="button" variant="" className='hover:cursor-pointer'>
                     {showpass ? <Eye width={20} height={20} color='#c2c2c2' onClick={handlePassToggle} />
@@ -24,10 +26,10 @@ function InputField({ type,size,placeholder }) {
             </TextField.Root>
             :
             <TextField.Root>
-                <TextField.Input type={type} radius='large' placeholder={placeholder} size={size?size:""}  value={value} onChange={handleOnChange} required/>
+                <TextField.Input ref={ref} {...props} type={type} radius='large' placeholder={placeholder} size={size?size:""}  value={value} onChange={handleOnChange} required/>
             </TextField.Root>
 
     )
-}
+})
 
 export default InputField
