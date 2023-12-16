@@ -1,8 +1,11 @@
-import { TextField, Button, Card } from '@radix-ui/themes'
+import { Button} from '@radix-ui/themes'
 import { Brain, Github, LayoutGrid, Mail, Monitor, Puzzle } from 'lucide-react'
 import React, { useState } from 'react'
 import InputField from '../components/InputField'
 import InfoBox from '../components/InfoBox'
+import LoginComponent from '../components/LoginComponent'
+import SignupComponent from '../components/SignupComponent'
+import { ToastContainer } from 'react-toastify';
 
 function Authenticate() {
 	let info = {
@@ -43,8 +46,8 @@ function Authenticate() {
 						and watch your knowledge soar effortlessly with AutoLearn by your side.
 					</div>
 					<div className='mt-4 flex justify-between'>
-						{Object.entries(info).map(([title, data]) => {
-							return <InfoBox icon={data.icon} title={title} desc={data.desc}></InfoBox>
+						{Object.entries(info).map(([title, data],index) => {
+							return <InfoBox icon={data.icon} title={title} desc={data.desc} key={index}></InfoBox>
 						})};
 
 					</div>
@@ -55,63 +58,39 @@ function Authenticate() {
 				<h1 className='text-5xl font-inter font-bold mt-28'> Hello Friend! </h1>
 				<p className='text-2xl mt-1 text-slate-500'>lets learn new stuff today</p>
 
+				{/* sliding login and signup mechanism */}
 				<div className='flex justify-center'>
+					{/* window to view the content */}
 					<div className='w-96 overflow-hidden'>
+						{/* content container which will slide */}
 						<div className={`flex w-96 transition ${move && "-translate-x-96 delay-100"}`} >
-							<div className='w-96'>
-								<form action="" method="" className='w-96' >
-									<div className='flex flex-col mt-14 gap-5 w-full p-2'>
-										<InputField type={'email'} placeholder={"Email"} size="3"></InputField>
-										<InputField type={'password'} placeholder={"Password"} size="3"></InputField>
-										<Button type='submit' size={"3"} variant="solid" radius='large' className='w-full' style={{ cursor: "pointer" }}>
-											Login
-										</Button>
-										<Button onClick={handleMove} type='button' size={"3"} variant="outline" radius='large' className='w-full' style={{ cursor: "pointer" }}>
-											Signup
-										</Button>
-										<div className="flex gap-2">
-											<Button type='button' size={"3"} variant="outline" radius='large' className='flex-grow' style={{ cursor: "pointer" }}>
-												Signup using <Mail />
-											</Button>
-											<Button type='button' size={"3"} variant="outline" radius='large' className='flex-grow' style={{ cursor: "pointer" }}>
-												Signup using <Github />
-											</Button>
-										</div>
-									</div>
-								</form>
-							</div>
 
-							<div className='w-96'>
-								<form action="" method="" className='w-96'>
-									<div className='flex flex-col mt-4 gap-5 p-2'>
-										<InputField type={'text'} placeholder={"Name"} size="3"></InputField>
-										<InputField type={'email'} placeholder={"Email"} size="3"></InputField>
-										<InputField type={'password'} placeholder={"Password"} size="3"></InputField>
-										<InputField type={'password'} placeholder={"Confirm Password"} size="3"></InputField>
-										<Button type='submit' size={"3"} variant="solid" radius='large' className='w-full' style={{ cursor: "pointer" }}>
-											Signup
-										</Button>
-										<Button onClick={handleMove} type='button' size={"3"} variant="outline" radius='large' className='w-full' style={{ cursor: "pointer" }}>
-											Back
-										</Button>
-										<div className="flex gap-2">
-											<Button type='button' size={"3"} variant="outline" radius='large' className='flex-grow' style={{ cursor: "pointer" }}>
-												Signup using <Mail />
-											</Button>
-											<Button type='button' size={"3"} variant="outline" radius='large' className='flex-grow' style={{ cursor: "pointer" }}>
-												Signup using <Github />
-											</Button>
-										</div>
-									</div>
-								</form>
-							</div>
+							{/* content 1 */}
+							{/* Note: window, content container and content should have the same width */}
+							<LoginComponent handleMove ={handleMove}/>
+
+							{/* content 2 */}
+							<SignupComponent handleMove ={handleMove}/>
 
 						</div>
 
 					</div>
 				</div>
 			</div>
+			<ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
 		</div>
+		
 	)
 }
 
