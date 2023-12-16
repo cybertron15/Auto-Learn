@@ -24,7 +24,7 @@ function InputField({ type,size,placeholder }) {
             </TextField.Root>
             :
             <TextField.Root>
-                <TextField.Input type={type} radius='large' placeholder={placeholder} size={size?size:""}  value={value} />
+                <TextField.Input type={type} radius='large' placeholder={placeholder} size={size?size:""}  value={value} onChange={handleOnChange} />
             </TextField.Root>
 
     )
