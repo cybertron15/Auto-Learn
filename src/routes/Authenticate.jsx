@@ -32,7 +32,7 @@ function Authenticate() {
 	return (
 		<div id='loginbg' className='h-full bg-cover grid grid-cols-6'>
 			<div className='lg:col-span-4'>
-				<div className='bg-slate-200 bg-opacity-50 mt-5 ms-5 rounded-xl pt-20 px-10 pb-24'>
+				<div className='bg-slate-200 bg-opacity-50 mt-5 mx-5 rounded-xl pt-20 px-10 pb-24'>
 					<div className='text-8xl'>
 						<div className='font-inter font-bold'>Welcome</div>
 						<div className='font-inter mt-4'><span className='font-bold'>To</span> <span className='font-pacifico'> Auto Learn</span></div>
