@@ -7,7 +7,8 @@ import {
   RouterProvider
 } from "react-router-dom";
 import Root from './routes/Root';
-import Login from './routes/Login';
+import Authenticate from './routes/Authenticate';
+import Test from './components/Test';
 
 // initializing react router
 const router = createBrowserRouter(
@@ -25,7 +26,7 @@ const router = createBrowserRouter(
     </Route>
     <Route
       path="login"
-      element={<Login />}
+      element={<Authenticate />}
       // loader={rootLoader}
       // action={rootAction}
       errorElement={<ErrorPage />}
