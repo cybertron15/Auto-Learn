@@ -5,6 +5,7 @@ import {
 } from '@radix-ui/themes'
 import makeTitleCase from '../utils/makeTitleCase'
 import { Trash } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 function SubjectCard({ topic, level }) {
     const levelIconMap = {
@@ -14,6 +15,7 @@ function SubjectCard({ topic, level }) {
         'Expert': '😎'
     }
     return (
+        <Link to={`subject/${topic}`}>
         <Card className='h-12 mt-2 ms-2 me-3 hover:ring-2 ring-lime-300 cursor-pointer'>
             <div className="flex justify-between">
                 <Text> {makeTitleCase(topic)}</Text>
@@ -22,8 +24,8 @@ function SubjectCard({ topic, level }) {
                     <Trash width={20} height={20} className=''/>
                 </div>
             </div>
-
         </Card>
+        </Link>
     )
 }
 
