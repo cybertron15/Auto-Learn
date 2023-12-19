@@ -1,7 +1,9 @@
 import React from 'react'
 import { Card, Inset, Text, Strong, Heading, Button } from '@radix-ui/themes'
+import { Link } from 'react-router-dom'
 
 function TopicCard({ topic, desc, testTaken }) {
+    const slug = topic.split(" ").join('-')
     return (
         <Card size="2" style={{ maxWidth: 240 }} className='mt-4 h-80 '>
             <div className='flex flex-col'>
@@ -28,7 +30,9 @@ function TopicCard({ topic, desc, testTaken }) {
                     <div className='mt-1'>
                         <Text className='mb-10'>Tests Taken: {testTaken}/5</Text>
                     </div>
-                    <Button >Open</Button>
+                    <Link to={slug}>
+                        <Button style={{ cursor: "pointer" }}>Open</Button>
+                    </Link>
                 </footer>
             </div>
         </Card>
